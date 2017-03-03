@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 class RestaurantTest {
 
     public static final String VALID_PHONE_NUMBER = "+336123456789";
+    public static final String INVALID_PHONE_NUMBER = "06123456789";
     private Restaurant _restaurant;
 
     @BeforeEach
@@ -63,10 +64,10 @@ class RestaurantTest {
         Restaurant restaurant = new Restaurant();
 
         // Act
-        restaurant.setPhone("06123456789");
+        restaurant.setPhone(INVALID_PHONE_NUMBER);
 
         // Assert
-        Assertions.assertNotEquals("06123456789", restaurant.getPhone(), "");
+        Assertions.assertNotEquals(INVALID_PHONE_NUMBER, restaurant.getPhone(), "");
     }
 
 
